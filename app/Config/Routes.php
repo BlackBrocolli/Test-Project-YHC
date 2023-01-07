@@ -45,6 +45,7 @@ $routes->get('/home/editmahasiswa/(:any)', 'Home::editmahasiswa/$1');
 $routes->post('/home/updatemahasiswa/(:any)', 'Home::updatemahasiswa/$1');
 $routes->get('/home/deletemahasiswa/(:any)', 'Home::deletemahasiswa/$1');
 $routes->post('/home/deletemahasiswa/(:any)', 'Home::deletemahasiswa/$1');
+$routes->get('/home/detailmahasiswa/(:any)', 'Home::detailmahasiswa/$1');
 
 /*
  * --------------------------------------------------------------------

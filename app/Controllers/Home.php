@@ -90,4 +90,13 @@ class Home extends BaseController
 
         return view('hapus_mahasiswa', $data);
     }
+
+    public function detailmahasiswa($nrp)
+    {
+        $data['title'] = 'Detail Mahasiswa';
+        $mahasiswa = new ViewMahasiswaModel();
+        $data['detail'] = $mahasiswa->find($nrp);
+
+        return view('detail_mahasiswa', $data);
+    }
 }

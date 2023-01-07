@@ -64,7 +64,7 @@
             </div>
 
             <button class="btn btn-primary">Save</button>
-            <a href="<?= base_url(); ?>/home/anggota">Cancel</a>
+            <a href="<?= base_url(); ?>/home">Cancel</a>
 
             </form>
 

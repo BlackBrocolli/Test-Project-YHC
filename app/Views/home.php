@@ -66,7 +66,7 @@
                                             <i class="fas fa-cog"></i>
                                         </button>
                                         <div class="dropdown-menu animated--fade-in" aria-labelledby="dropdownMenuButton">
-                                            <a class="dropdown-item" href="#">
+                                            <a class="dropdown-item" href="<?= base_url(); ?>/home/detailmahasiswa/<?= $row->nrp; ?>">
                                                 <i class="fas fa-info mr-2"></i>Detail mahasiswa
                                             </a>
                                             <a title="Update" class="dropdown-item" href="<?= base_url(); ?>/home/editmahasiswa/<?= $row->nrp; ?>">

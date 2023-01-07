@@ -27,13 +27,6 @@
             <span>Mahasiswa</span></a>
     </li>
 
-    <!-- Nav Item - pengunjung -->
-    <li class="nav-item">
-        <a class="nav-link" href="#">
-            <i class="fas fa-fw fa-search"></i>
-            <span>Pencarian</span></a>
-    </li>
-
     <!-- Divider -->
     <hr class="sidebar-divider d-none d-md-block">
 
