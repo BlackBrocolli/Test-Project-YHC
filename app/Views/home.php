@@ -20,6 +20,12 @@
             <h6 class="m-0 font-weight-bold text-primary">Daftar Mahasiswa</h6>
         </div>
         <div class="card-body">
+            <!-- tampilkan info jika ada -->
+            <?php if (!empty(session()->getFlashdata('info'))) : ?>
+                <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                    <?php echo session()->getFlashdata('info'); ?>
+                </div>
+            <?php endif; ?>
             <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
@@ -30,6 +36,7 @@
                             <th>Semester</th>
                             <th>Kelas</th>
                             <th>Angkatan</th>
+                            <th>Aksi</th>
                         </tr>
                     </thead>
                     <tfoot>
@@ -40,6 +47,7 @@
                             <th>Semester</th>
                             <th>Kelas</th>
                             <th>Angkatan</th>
+                            <th>Aksi</th>
                         </tr>
                     </tfoot>
                     <tbody>
@@ -52,6 +60,24 @@
                                 <td><?php echo $row->semester; ?></td>
                                 <td><?php echo $row->kelas; ?></td>
                                 <td><?php echo $row->tahun_angkatan; ?></td>
+                                <td>
+                                    <div class="dropdown">
+                                        <button class="btn btn-circle btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <i class="fas fa-cog"></i>
+                                        </button>
+                                        <div class="dropdown-menu animated--fade-in" aria-labelledby="dropdownMenuButton">
+                                            <a class="dropdown-item" href="#">
+                                                <i class="fas fa-info mr-2"></i>Detail mahasiswa
+                                            </a>
+                                            <a title="Update" class="dropdown-item" href="<?= base_url(); ?>/home/editmahasiswa/<?= $row->nrp; ?>">
+                                                <i class="fas fa-edit mr-2"></i>Edit
+                                            </a>
+                                            <a class="dropdown-item" href="#">
+                                                <i class="fas fa-trash mr-2"></i>Hapus
+                                            </a>
+                                        </div>
+                                    </div>
+                                </td>
                             </tr>
                         <?php endforeach; ?>
                     </tbody>

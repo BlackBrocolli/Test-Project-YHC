@@ -41,6 +41,8 @@ $routes->post('/login/process', 'Login::process');
 $routes->get('/logout', 'Login::logout');
 $routes->get('/home/tambah', 'Home::view_tambah');
 $routes->post('/home/createmahasiswa', 'Home::createmahasiswa');
+$routes->get('/home/editmahasiswa/(:any)', 'Home::editmahasiswa/$1');
+$routes->post('/home/updatemahasiswa/(:any)', 'Home::updatemahasiswa/$1');
 
 /*
  * --------------------------------------------------------------------

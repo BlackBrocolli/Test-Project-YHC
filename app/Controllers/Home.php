@@ -47,4 +47,31 @@ class Home extends BaseController
         return redirect()->to("/home")
             ->with('info', 'Berhasil menambahkan data');
     }
+
+    public function editmahasiswa($nrp)
+    {
+        $data['title'] = 'Edit Mahasiswa';
+        $mahasiswa = new MahasiswaModel();
+        $data['edit'] = $mahasiswa->find($nrp);
+        $prodi = new ProdiModel();
+        $data['prodi'] = $prodi->orderBy('id_prodi', 'asc')->findAll();
+
+        return view('update_mahasiswa', $data);
+    }
+
+    public function updatemahasiswa($nrp)
+    {
+        $mahasiswa = new MahasiswaModel();
+
+        $result = $mahasiswa->update($nrp, [
+            'nama_mahasiswa' => $this->request->getPost("nama_mahasiswa"),
+            'id_prodi' => $this->request->getPost("select_prodi"),
+            'semester' => $this->request->getPost("semester"),
+            'kelas' => $this->request->getPost("select_kelas"),
+            'tahun_angkatan' => $this->request->getPost("angkatan"),
+        ]);
+
+        return redirect()->to('/home')
+            ->with('info', 'Berhasil mengupdate data');
+    }
 }
