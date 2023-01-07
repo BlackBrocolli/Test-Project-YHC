@@ -74,4 +74,20 @@ class Home extends BaseController
         return redirect()->to('/home')
             ->with('info', 'Berhasil mengupdate data');
     }
+
+    public function deletemahasiswa($nrp)
+    {
+        $data['title'] = 'Hapus Mahasiswa';
+        $mahasiswa = new MahasiswaModel();
+        $data['delete'] = $mahasiswa->find($nrp);
+
+        if ($this->request->getMethod() === 'post') {
+            $mahasiswa->delete($nrp);
+
+            return redirect()->to('/home')
+                ->with('info', 'Berhasil menghapus data');
+        }
+
+        return view('hapus_mahasiswa', $data);
+    }
 }

@@ -72,7 +72,7 @@
                                             <a title="Update" class="dropdown-item" href="<?= base_url(); ?>/home/editmahasiswa/<?= $row->nrp; ?>">
                                                 <i class="fas fa-edit mr-2"></i>Edit
                                             </a>
-                                            <a class="dropdown-item" href="#">
+                                            <a title="Delete" class="dropdown-item" href="<?= base_url(); ?>/home/deletemahasiswa/<?= $row->nrp; ?>">
                                                 <i class="fas fa-trash mr-2"></i>Hapus
                                             </a>
                                         </div>

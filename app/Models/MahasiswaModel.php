@@ -11,8 +11,6 @@ class MahasiswaModel extends Model
     protected $returnType     = 'object';
     protected $allowedFields = ['nrp', 'nama_mahasiswa', 'semester', 'id_prodi', 'tahun_angkatan', 'kelas'];
     protected $useTimestamps = false;
-    protected $useSoftDeletes = true;
-    protected $deletedField = 'deleted_at';
 
     protected $validationRules = [
         'nrp' => 'required',
